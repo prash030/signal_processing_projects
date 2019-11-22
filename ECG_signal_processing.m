@@ -1,8 +1,8 @@
-
+% Author: Prasanth "Prash" Ganesan <prasganesan.pg@gmail.com>
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% Problem 2
+%% (1)
 clear
 % Add the wfdb-app-toolbox-0-9-10 toolbox to the path
 % MIT BIH NSR database
@@ -28,7 +28,7 @@ ylabel('Amplitude')
 hold on;
 plot(ann(ann<=samples)./fs,new_ecg(ann(ann<=samples)),'r*');
 
-%% Problem 3
+%% (2)
 clear
 time_req=2*3600; % 2 hours data
 fs=128;
@@ -39,7 +39,7 @@ ann=rdann('nsrdb/16265','atr',[],samples);
 ann=ann(:,1);
 [HR_vec,tot_avg_HR,var_HR] = cal_HR(ECG,ann);
 
-%% Problem 4
+%% (3)
 clear
 % MIT-BIH AFib database
 % Atrial fibrillation is one of the life-threatening arrhythmia that is
@@ -70,8 +70,7 @@ ylabel('Amplitude')
 % of R-waves are completely irregular and the
 % baseline is fractionated.
 
-
-%% Problem 5
+%% (4)
 clear
 % Import and Plot signal
 [t,ECG1]=rdsamp('ecgiddb/Person_01/rec_5',[1],4000);
@@ -101,7 +100,6 @@ Apass = 0.01;      % Passband Ripple (dB)
 Fs    = 500;    % Sampling Frequency
 
 h = fdesign.highpass('fst,fp,ast,ap', Fstop, Fpass, Astop, Apass, Fs);
-
 IIR_HPF = design(h, 'ellip', 'SystemObject', true);
 
 % Design low pass filter
@@ -114,7 +112,6 @@ Astop = 150;  % Stopband Attenuation (dB)
 Fs    = 500;  % Sampling Frequency
 
 h = fdesign.lowpass('fp,fst,ap,ast', Fpass, Fstop, Apass, Astop, Fs);
-
 IIR_LPF = design(h, 'ellip', 'SystemObject', true);
 
 % View the filters
@@ -144,7 +141,3 @@ figure; plot(f,y_fft);
 xlabel('frequency (Hz)');
 title('FFT of the designed Filter Response')
 
-% By looking at the plot with the original and the filtered signal, we
-% could see that the baseline wander has been cancelled and the high
-% freequncy powerline noise has been filtered out. The frequency domain
-% plots also shows the remaining frequencies in the new signal.
