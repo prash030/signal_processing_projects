@@ -2,7 +2,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% (1)
+%%---------------------------------------------------
 clear
 % Add the wfdb-app-toolbox-0-9-10 toolbox to the path
 % MIT BIH NSR database
@@ -28,7 +28,7 @@ ylabel('Amplitude')
 hold on;
 plot(ann(ann<=samples)./fs,new_ecg(ann(ann<=samples)),'r*');
 
-%% (2)
+%%--------------------------------------------
 clear
 time_req=2*3600; % 2 hours data
 fs=128;
@@ -39,7 +39,7 @@ ann=rdann('nsrdb/16265','atr',[],samples);
 ann=ann(:,1);
 [HR_vec,tot_avg_HR,var_HR] = cal_HR(ECG,ann);
 
-%% (3)
+%%-------------------------------------------------------------------
 clear
 % MIT-BIH AFib database
 % Atrial fibrillation is one of the life-threatening arrhythmia that is
@@ -70,7 +70,7 @@ ylabel('Amplitude')
 % of R-waves are completely irregular and the
 % baseline is fractionated.
 
-%% (4)
+%%---------------------------------------------------
 clear
 % Import and Plot signal
 [t,ECG1]=rdsamp('ecgiddb/Person_01/rec_5',[1],4000);
