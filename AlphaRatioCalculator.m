@@ -1,4 +1,5 @@
-% AlphaRatioCalculator.m (c) Prasanth "Prash" Ganesan
+% AlphaRatioCalculator.m 
+% Copyright (c) Prasanth "Prash" Ganesan
 % Author email: <prasganesan.pg@gmail.com>
 
 function [Alpha_closed_open_R] = AlphaRatioCalculator(hdr_open,hdr_closed,EEG_open,EEG_closed)
