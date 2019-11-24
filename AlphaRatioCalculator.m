@@ -1,5 +1,5 @@
 % AlphaRatioCalculator.m (c) Prasanth "Prash" Ganesan
-% Author: Prash Ganesan <prasganesan.pg@gmail.com>
+% Author email: <prasganesan.pg@gmail.com>
 
 function [Alpha_closed_open_R] = AlphaRatioCalculator(hdr_open,hdr_closed,EEG_open,EEG_closed)
   %AlphaRatioCalculator Calculates the alpha ratio of EEG signals
